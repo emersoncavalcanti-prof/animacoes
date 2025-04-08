@@ -17,7 +17,6 @@ class _HomePageState extends State<HomePage> {
   void alterar() {
     setState(() {
       clicou = !clicou;
-      print(clicou);
     });
   }
 
@@ -32,11 +31,17 @@ class _HomePageState extends State<HomePage> {
               alterar();
             },
             child: AnimatedContainer(
-              duration: Duration(seconds: 3),
-              curve: Curves.easeIn,
+              duration: Duration(seconds: 2),
+              curve: Curves.decelerate,
               width: clicou == true ? 200 : 100,
               height: clicou == true ? 200 : 100,
-              color: clicou == true ? Colors.blue : Colors.red,
+              decoration: BoxDecoration(
+                color: clicou == true ? Colors.blue : Colors.red,
+                borderRadius:
+                    clicou == true
+                        ? BorderRadius.all(Radius.circular(0))
+                        : BorderRadius.all(Radius.circular(100)),
+              ),
             ),
           ),
         ),
