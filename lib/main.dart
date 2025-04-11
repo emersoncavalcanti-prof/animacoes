@@ -1,7 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 void main(List<String> args) {
-  runApp(Page2());
+  runApp(AnimacaoLottie());
+}
+
+class AnimacaoLottie extends StatelessWidget {
+  const AnimacaoLottie({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Lottie.network(
+            'https://lottie.host/8538c137-c4fe-492d-9c16-08a0d0f46d5e/OZaEybBgrk.json',
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class Page2 extends StatefulWidget {
